@@ -1,3 +1,4 @@
+```jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -34,7 +35,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-         "https://portfolio-backend-avinish.onrender.com/api/messages",
+        "https://portfolio-1-07p8.onrender.com/api/messages",
         {
           method: "POST",
           headers: {
@@ -60,6 +61,7 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
+
       setStatus(
         "Unable to send message. Please try again."
       );
@@ -71,9 +73,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-slate-900 text-white py-24 px-6"
+      className="py-24 px-6 bg-slate-900 text-white"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <motion.div
@@ -121,50 +123,50 @@ export default function Contact() {
               technology projects.
             </p>
 
-            {/* Contact Information */}
-            <div className="space-y-6 mt-10">
-
-              <div className="flex items-center gap-5">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
-                  <FaEnvelope />
-                </div>
-
-                <div>
-                  <p className="text-gray-500 text-sm">
-                    Email
-                  </p>
-
-                  <a
-                    href="mailto:your-email@example.com"
-                    className="text-gray-200 hover:text-blue-500 transition"
-                  >
-                    avinish729@gmail.com             </a>
-                </div>
+            {/* Email */}
+            <div className="flex items-center gap-5 mt-10">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                <FaEnvelope />
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
-                  <FaMapMarkerAlt />
-                </div>
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Email
+                </p>
 
-                <div>
-                  <p className="text-gray-500 text-sm">
-                    Location
-                  </p>
+                <a
+                  href="mailto:avinish729@gmail.com"
+                  className="text-gray-200 hover:text-blue-500 transition"
+                >
+                  avinish729@gmail.com
+                </a>
+              </div>
+            </div>
 
-                  <p className="text-gray-200">
-                    India
-                  </p>
-                </div>
+            {/* Location */}
+            <div className="flex items-center gap-5 mt-6">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                <FaMapMarkerAlt />
               </div>
 
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Location
+                </p>
+
+                <p className="text-gray-200">
+                  India
+                </p>
+              </div>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-5 mt-10">
 
               <a
-                href="#"
+                href="https://github.com/avinish666"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-xl hover:bg-blue-600 transition"
               >
@@ -190,7 +192,6 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-slate-950 border border-slate-800 rounded-3xl p-8"
           >
-
             <form onSubmit={handleSubmit}>
 
               {/* Name */}
@@ -291,7 +292,6 @@ export default function Contact() {
               )}
 
             </form>
-
           </motion.div>
 
         </div>
@@ -299,3 +299,5 @@ export default function Contact() {
     </section>
   );
 }
+```
+
