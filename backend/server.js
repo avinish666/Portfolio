@@ -8,31 +8,35 @@ const messageRoutes = require("./routes/messageRoutes");
 const app = express();
 
 
-// CORS
+// CORS FIRST
 app.use(
   cors({
     origin: [
       "https://portfolio-avinish.onrender.com",
       "http://localhost:5173"
     ],
-    methods: [
+    methods:[
       "GET",
       "POST",
       "PUT",
       "DELETE",
       "OPTIONS"
     ],
-    allowedHeaders: [
+    allowedHeaders:[
       "Content-Type",
       "Authorization"
     ],
-    credentials: true
+    credentials:true
   })
 );
 
 
-app.options("*", cors());
-
-
 // Body parser
 app.use(express.json());
+
+
+// Routes
+app.use(
+"/api/messages",
+messageRoutes
+);
