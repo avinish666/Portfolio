@@ -7,7 +7,16 @@ const messageRoutes = require("./routes/messageRoutes");
 
 const app = express();
 
-app.use(cors());
+// CORS
+app.use(
+  cors({
+    origin: "https://portfolio-avinish.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
+
+// Middleware
 app.use(express.json());
 
 // MongoDB connection
@@ -31,8 +40,9 @@ app.get("/", (req, res) => {
 // Contact messages
 app.use("/api/messages", messageRoutes);
 
+// Port
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
