@@ -1,4 +1,4 @@
-```jsx
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -51,7 +51,7 @@ export default function Contact() {
         throw new Error(data.message || "Something went wrong.");
       }
 
-      setStatus("Message sent successfully! ✅");
+      setStatus("Message sent successfully!");
 
       setFormData({
         name: "",
@@ -61,23 +61,16 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
-
-      setStatus(
-        "Unable to send message. Please try again."
-      );
+      setStatus("Unable to send message. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section
-      id="contact"
-      className="py-24 px-6 bg-slate-900 text-white"
-    >
+    <section id="contact" className="py-24 px-6 text-white">
       <div className="max-w-6xl mx-auto">
 
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,10 +95,8 @@ export default function Contact() {
           <div className="w-20 h-1 bg-blue-500 mx-auto mt-6 rounded-full" />
         </motion.div>
 
-        {/* Contact Content */}
         <div className="grid lg:grid-cols-2 gap-12">
 
-          {/* Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -123,7 +114,6 @@ export default function Contact() {
               technology projects.
             </p>
 
-            {/* Email */}
             <div className="flex items-center gap-5 mt-10">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
                 <FaEnvelope />
@@ -143,7 +133,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Location */}
             <div className="flex items-center gap-5 mt-6">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
                 <FaMapMarkerAlt />
@@ -160,9 +149,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="flex gap-5 mt-10">
-
               <a
                 href="https://github.com/avinish666"
                 target="_blank"
@@ -180,11 +167,9 @@ export default function Contact() {
               >
                 <FaLinkedin />
               </a>
-
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -194,7 +179,6 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit}>
 
-              {/* Name */}
               <div className="mb-5">
                 <label className="block text-sm text-gray-400 mb-2">
                   Your Name
@@ -211,7 +195,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Email */}
               <div className="mb-5">
                 <label className="block text-sm text-gray-400 mb-2">
                   Email Address
@@ -228,7 +211,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Subject */}
               <div className="mb-5">
                 <label className="block text-sm text-gray-400 mb-2">
                   Subject
@@ -245,7 +227,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Message */}
               <div className="mb-6">
                 <label className="block text-sm text-gray-400 mb-2">
                   Message
@@ -262,7 +243,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={loading}
@@ -278,7 +258,6 @@ export default function Contact() {
                 )}
               </button>
 
-              {/* Status */}
               {status && (
                 <p
                   className={`text-center mt-5 ${
@@ -299,5 +278,5 @@ export default function Contact() {
     </section>
   );
 }
-```
+
 
