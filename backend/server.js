@@ -1,21 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan")
 require("dotenv").config();
 
 const messageRoutes = require("./routes/messageRoutes");
 
 const app = express();
 
-
-// Security middleware
-app.use(helmet());
-
-
-// Logger
-app.use(morgan("dev"));
 
 
 // CORS
