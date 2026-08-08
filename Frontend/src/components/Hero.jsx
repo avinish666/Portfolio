@@ -470,7 +470,7 @@ export default function Hero() {
             >
 
               <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80"
+                src=""
                 alt="Avinish profile"
                 className="
                   w-64
