@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 
+import profileImage from "./Avinish Kumar.jpeg";
 const floatingCards = [
   {
     text: "React.js",
@@ -454,38 +455,36 @@ export default function Hero() {
                 opacity-30
               "
             />
+  {/* Profile image */}
 
-            {/* Profile image */}
+<motion.div
+  animate={{
+    y: [0, -15, 0],
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="relative z-10"
+>
+  <img
+    src={profileImage}
+    alt="Avinish Kumar profile"
+    className="
+      w-64
+      h-64
+      md:w-80
+      md:h-80
+      rounded-full
+      border-8
+      border-blue-500
+      object-cover
+      shadow-[0_0_60px_rgba(59,130,246,0.4)]
+    "
+  />
+</motion.div>
 
-            <motion.div
-              animate={{
-                y: [0, -15, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative z-10"
-            >
-
-              <img
-                src=""
-                alt="Avinish profile"
-                className="
-                  w-64
-                  h-64
-                  md:w-80
-                  md:h-80
-                  rounded-full
-                  border-8
-                  border-blue-500
-                  object-cover
-                  shadow-[0_0_60px_rgba(59,130,246,0.4)]
-                "
-              />
-
-            </motion.div>
 
             {/* Floating technology cards */}
 
